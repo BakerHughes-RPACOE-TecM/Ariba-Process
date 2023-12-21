@@ -1,5 +1,5 @@
 {
-  "name": "Ariba_DocumentUpload",
+  "name": "BH_TechM_TPS_SC_111",
   "description": "Ariba Process\r\n1. Download the document form the share point \r\n2. Upload the document in the Oscar Oltp Application",
   "main": "Main.xaml",
   "dependencies": {
