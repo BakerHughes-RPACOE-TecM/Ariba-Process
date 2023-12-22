@@ -243,7 +243,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <State.Transitions>
-        <Transition DisplayName="New Transaction" sap:VirtualizedContainerService.HintSize="430,710" sap2010:WorkflowViewState.IdRef="Transition_14">
+        <Transition DisplayName="New Transaction" sap:VirtualizedContainerService.HintSize="481.333333333333,700" sap2010:WorkflowViewState.IdRef="Transition_14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:PointCollection x:Key="ConnectorLocation">497.866666666667,442.166666666667 497.866666666667,472.166666666667 391.733333333333,472.166666666667 391.733333333333,509</av:PointCollection>
@@ -253,9 +253,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="485.333333333333,1877.33333333333" sap2010:WorkflowViewState.IdRef="State_7">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="503.333333333333,2872" sap2010:WorkflowViewState.IdRef="State_7">
               <State.Entry>
-                <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="438.666666666667,1404" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+                <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="456.666666666667,2398.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -263,11 +263,11 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Process the current TransactionItem" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence DisplayName="Process the current TransactionItem" sap:VirtualizedContainerService.HintSize="418,1064" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Sequence DisplayName="Log transaction started" sap:VirtualizedContainerService.HintSize="376,614" sap2010:WorkflowViewState.IdRef="Sequence_39">
@@ -282,7 +282,7 @@
                             <OutArgument x:TypeArguments="x:String">[transactionId]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">Put transaction ID here</InArgument>
+                            <InArgument x:TypeArguments="x:String">[Transactionitem.itemkey.tostring]</InArgument>
                           </Assign.Value>
                         </Assign>
                         <Assign DisplayName="Set transaction name" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_44">
@@ -345,7 +345,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404.666666666667,428.666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_14">
+                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="422.666666666667,428.666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -485,7 +485,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Transitions>
-                <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="461.333333333333,1270.66666666667" sap2010:WorkflowViewState.IdRef="Transition_11">
+                <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="515.333333333333,1300.66666666667" sap2010:WorkflowViewState.IdRef="Transition_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">368.6,657.666666666667 368.6,671.7 615.833333333333,671.7 615.833333333333,371.7 585.833333333333,371.7</av:PointCollection>
@@ -498,7 +498,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap2010:Annotation.AnnotationText="This transition is executed if a business rule exception occurred." DisplayName="Handle Business Rule Exception" sap:VirtualizedContainerService.HintSize="356,857.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <Sequence sap2010:Annotation.AnnotationText="This transition is executed if a business rule exception occurred." DisplayName="Handle Business Rule Exception" sap:VirtualizedContainerService.HintSize="410,887.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_41">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -506,16 +506,16 @@
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:RetryScope sap2010:Annotation.AnnotationText="Set Transaction status Activity timeout increased to 60 sec and it will be retried three times" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="314,389" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+                      <ui:RetryScope sap2010:Annotation.AnnotationText="Set Transaction status Activity timeout increased to 60 sec and it will be retried three times" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="368,426" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
                         <ui:RetryScope.ActivityBody>
                           <ActivityAction>
-                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="222,173" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="326,203.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_77">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" sap2010:Annotation.AnnotationText="Business exception" DisplayName="Set transaction status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,49" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_4" Reason="[BusinessRuleException.Message]" Status="Failed" TimeoutMS="60000" TransactionItem="[TransactionItem]">
+                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" sap2010:Annotation.AnnotationText="Business exception" DisplayName="Set transaction status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="284,111.333333333333" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_4" Reason="[BusinessRuleException.Message]" Status="Failed" TimeoutMS="60000" TransactionItem="[TransactionItem]">
                                 <ui:SetTransactionStatus.Analytics>
                                   <scg:Dictionary x:TypeArguments="x:String, InArgument" />
                                 </ui:SetTransactionStatus.Analytics>
@@ -540,8 +540,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:RetryScope>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Warn" Message="[Config(&quot;LogMessage_BusinessRuleException&quot;).ToString + BusinessRuleException.Message]" />
-                      <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="368,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Warn" Message="[Config(&quot;LogMessage_BusinessRuleException&quot;).ToString + BusinessRuleException.Message]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="368,62" sap2010:WorkflowViewState.IdRef="Assign_49">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[TransactionNumber]</OutArgument>
                         </Assign.To>
@@ -549,7 +549,7 @@
                           <InArgument x:TypeArguments="x:Int32">[TransactionNumber+1]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+                      <Assign sap:VirtualizedContainerService.HintSize="368,62" sap2010:WorkflowViewState.IdRef="Assign_50">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[RetryNumber]</OutArgument>
                         </Assign.To>
@@ -1275,13 +1275,13 @@
             </State>
           </Transition.To>
           <Transition.Action>
-            <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_76">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_76">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_101">
+              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_101">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[dataLoaded]</OutArgument>
                 </Assign.To>
@@ -1289,7 +1289,7 @@
                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[Config(&quot;LogMessage_GetTransactionData&quot;).ToString+TransactionNumber.ToString]" />
+              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[Config(&quot;LogMessage_GetTransactionData&quot;).ToString+TransactionNumber.ToString]" />
             </Sequence>
           </Transition.Action>
           <Transition.Condition>[TransactionItem IsNot Nothing]</Transition.Condition>
