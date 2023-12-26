@@ -20,6 +20,7 @@
     <x:Property Name="ProjectName" Type="InArgument(x:String)" />
     <x:Property Name="Trans_Count" Type="InArgument(x:String)" />
     <x:Property Name="In_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="In_InputfullFilePath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -121,7 +122,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Process Start Seq" sap:VirtualizedContainerService.HintSize="840,1172.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -156,9 +156,9 @@
               <InArgument x:TypeArguments="x:String">Success</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:WriteCell Cell="[&quot;G&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="test1 " Text="[strTxStatus]" WorkbookPath="[In_Config(&quot;InputExcelFilePath&quot;).tostring]" />
-          <ui:WriteCell Cell="[&quot;H&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="test1 " Text="Test Updated" WorkbookPath="[In_Config(&quot;InputExcelFilePath&quot;).tostring]" />
-          <ui:WriteCell Cell="[&quot;I&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="test1 " Text="[DateTime.Now.ToString]" WorkbookPath="[In_Config(&quot;InputExcelFilePath&quot;).tostring]" />
+          <ui:WriteCell Cell="[&quot;G&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="test1 " Text="[strTxStatus]" WorkbookPath="[In_InputfullFilePath]" />
+          <ui:WriteCell Cell="[&quot;H&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="test1 " Text="Test Updated" WorkbookPath="[In_InputfullFilePath]" />
+          <ui:WriteCell Cell="[&quot;I&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="test1 " Text="[DateTime.Now.ToString]" WorkbookPath="[In_InputfullFilePath]" />
           <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strTransactionError]</OutArgument>
@@ -186,9 +186,9 @@
               <InArgument x:TypeArguments="x:String">Failed</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:WriteCell Cell="[&quot;G&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="test1 " Text="[strTxStatus]" WorkbookPath="[In_Config(&quot;InputExcelFilePath&quot;).tostring]" />
-          <ui:WriteCell Cell="[&quot;H&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="test1 " Text="Failed Test Updated" WorkbookPath="[In_Config(&quot;InputExcelFilePath&quot;).tostring]" />
-          <ui:WriteCell Cell="[&quot;I&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="test1 " Text="[DateTime.Now.ToString]" WorkbookPath="[In_Config(&quot;InputExcelFilePath&quot;).tostring]" />
+          <ui:WriteCell Cell="[&quot;G&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="test1 " Text="[strTxStatus]" WorkbookPath="[In_InputfullFilePath]" />
+          <ui:WriteCell Cell="[&quot;H&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="test1 " Text="Failed Test Updated" WorkbookPath="[In_InputfullFilePath]" />
+          <ui:WriteCell Cell="[&quot;I&quot;+(CInt(Trans_Count)+1).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="test1 " Text="[DateTime.Now.ToString]" WorkbookPath="[In_InputfullFilePath]" />
           <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strTransactionError]</OutArgument>
@@ -212,6 +212,6 @@
         <InArgument x:TypeArguments="x:String" x:Key="ProjectName">[ProjectName]</InArgument>
       </ui:AddLogFields.Fields>
     </ui:AddLogFields>
-    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="726,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Transaction: &quot;+TransactionName+&quot; &quot; +TransactionID+&quot;: Finished.&quot;]" />
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Transaction: &quot;+TransactionName+&quot; &quot; +TransactionID+&quot;: Finished.&quot;]" />
   </Sequence>
 </Activity>
