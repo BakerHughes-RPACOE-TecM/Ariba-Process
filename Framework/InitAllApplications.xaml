@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,946</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1270.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -42,6 +42,7 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -76,73 +77,85 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
       <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="Initialization Sequence" sap:VirtualizedContainerService.HintSize="376,881.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="Initialization Sequence" sap:VirtualizedContainerService.HintSize="478.666666666667,1206" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening applications...&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ISupplier_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ISupplier_Login.xaml">
+    <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="436.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening applications...&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ISupplier_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ISupplier_Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, ss:SecureString)" x:Key="in_Passwords">[in_Passwords]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SharePoint_DownloadAllFileinFolder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SharePoint_DownloadAllFileinFolder.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SharePoint_DownloadAllFileinFolder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SharePoint_DownloadAllFileinFolder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="s:String[]" x:Key="in_DownloadFileNames" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">
-          <Literal x:TypeArguments="x:String">Data\Input\Pdf Documents</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointItemUrl">
-          <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue/COO_upload_Testcase1_231103_FAB</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointLink">
-          <Literal x:TypeArguments="x:String">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">
-          <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_Passwords(&quot;SharePointcreds&quot;)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SharePointcreds&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">Data\Input\Pdf Documents</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointItemUrl">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue/COO_upload_Testcase1_231103_FAB</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointLink">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">[in_Passwords("SharePointcreds")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">[in_Config("SharePointcreds").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SharePoint_DownloadSpecificFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SharePoint_DownloadSpecificFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SharePoint_DownloadSpecificFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SharePoint_DownloadSpecificFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SharePointcreds&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">
-          <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_Passwords(&quot;SharePointcreds&quot;)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointLink">
-          <Literal x:TypeArguments="x:String">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointItemUrl">
-          <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">
-          <Literal x:TypeArguments="x:String">Data\Input</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">[in_Config("SharePointcreds").ToString]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">[in_Passwords("SharePointcreds")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointLink">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharePointItemUrl">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">Data\Input</InArgument>
         <InArgument x:TypeArguments="s:String[]" x:Key="in_DownloadFileNames" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Adding Data to Queue.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Adding Data to Queue.xaml">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.666666666667,284.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,206" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MoveSharepointFiles.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="MoveSharepointFiles.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SharePointBaseUrl">
+                <Literal x:TypeArguments="x:String">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</Literal>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SharePointcreds&quot;).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">
+                <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_Passwords(&quot;SharePointcreds&quot;)" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SharePointSourceItemURL">
+                <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue</Literal>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SharePointDestinationItemURL">
+                <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Bot Processed Files</Literal>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Adding Data to Queue.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Adding Data to Queue.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="In_Config">
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="InputFileFullName">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Out_InputFullFileName" />
-        </OutArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="In_Config">[in_Config]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="InputFileFullName">[Out_InputFullFileName]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
