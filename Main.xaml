@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,896</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>847.333333333333,896</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -273,7 +273,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="231.333333333333,148.666666666667" sap2010:WorkflowViewState.IdRef="State_7">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="503.333333333333,2872" sap2010:WorkflowViewState.IdRef="State_7">
               <State.Entry>
                 <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="456.666666666667,2398.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                   <sap:WorkflowViewStateService.ViewState>
@@ -466,16 +466,36 @@
                   <TryCatch.Finally>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log transaction finished" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Framework\TransactionFinishLog.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="TransactionID">[transactionId.ToString]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="TransactionName">[transactionName]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="TransactionStartTime">[transactionStartTime.ToString]</InArgument>
-                        <InArgument x:TypeArguments="s:Exception" x:Key="TransactionError">[transactionError]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="ProjectId">[Config("ProjectId").ToString]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="ProjectName">[Config("ProjectName").ToString]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Trans_Count">[TransactionNumber.ToString]</InArgument>
-                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="In_Config">[Config]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="In_InputfullFilePath">[InputFullFilePath]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="In_FileUpdateStatus">[Out_FileUpdateStatus]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="TransactionID">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="transactionId.ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="TransactionName">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="transactionName" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="TransactionStartTime">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="transactionStartTime.ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="s:Exception" x:Key="TransactionError">
+                          <mva:VisualBasicValue x:TypeArguments="s:Exception" ExpressionText="transactionError" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="ProjectId">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ProjectId&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="ProjectName">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ProjectName&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Trans_Count">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionNumber.ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="In_Config">
+                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="In_InputfullFilePath">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InputFullFilePath" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="In_FileUpdateStatus">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Out_FileUpdateStatus" />
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </TryCatch.Finally>
@@ -568,7 +588,7 @@
                   </Transition.Action>
                   <Transition.Condition>[BusinessRuleException IsNot Nothing]</Transition.Condition>
                 </Transition>
-                <Transition DisplayName="Application Exception" sap:VirtualizedContainerService.HintSize="1367.33333333333,3996" sap2010:WorkflowViewState.IdRef="Transition_13">
+                <Transition DisplayName="Application Exception" sap:VirtualizedContainerService.HintSize="1367.33333333333,4000" sap2010:WorkflowViewState.IdRef="Transition_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">391.733333333333,657.666666666667 391.733333333333,687.666666666667 601.733333333333,687.666666666667 601.733333333333,65.2 528.5,65.2</av:PointCollection>
@@ -652,9 +672,18 @@
                                 <If.Then>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, ss:SecureString)" x:Key="in_Passwords">[Passwords]</InArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="Out_InputFullFileName">[InputFullFilePath]</OutArgument>
+                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                        <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, ss:SecureString)" x:Key="in_Passwords">
+                                        <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ss:SecureString)" ExpressionText="Passwords" />
+                                      </InArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="Out_InputFullFileName">
+                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="InputFullFilePath" />
+                                      </OutArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="Transaction_Number">
+                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
+                                      </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </If.Then>
@@ -908,7 +937,7 @@
                     </State>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap2010:Annotation.AnnotationText="This transition is executed if a system error occurred." DisplayName="Handle System Error" sap:VirtualizedContainerService.HintSize="1262,3582.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <Sequence sap2010:Annotation.AnnotationText="This transition is executed if a system error occurred." DisplayName="Handle System Error" sap:VirtualizedContainerService.HintSize="1262,3586.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_44">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -950,12 +979,12 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:RetryScope>
-                      <ui:Comment sap:VirtualizedContainerService.HintSize="1058,169" sap2010:WorkflowViewState.IdRef="Comment_3" Text="If using queues, it's strongly recommended to use the automatic retry feature of the queue rather than the retry function in the framework. If you are using automatic retry, make sure MaxRetryNumber is set to 0 in your Config.xlsx so that the below retry functionality is skipped." />
-                      <If Condition="[cint(Config(&quot;MaxRetryNumber&quot;))&gt;0]" DisplayName="If retry is enabled" sap:VirtualizedContainerService.HintSize="1220,816.666666666667" sap2010:WorkflowViewState.IdRef="If_33">
+                      <ui:Comment sap:VirtualizedContainerService.HintSize="1220,171.333333333333" sap2010:WorkflowViewState.IdRef="Comment_3" Text="If using queues, it's strongly recommended to use the automatic retry feature of the queue rather than the retry function in the framework. If you are using automatic retry, make sure MaxRetryNumber is set to 0 in your Config.xlsx so that the below retry functionality is skipped." />
+                      <If Condition="[cint(Config(&quot;MaxRetryNumber&quot;))&gt;0]" DisplayName="If retry is enabled" sap:VirtualizedContainerService.HintSize="1220,818.666666666667" sap2010:WorkflowViewState.IdRef="If_33">
                         <If.Then>
-                          <If Condition="[RetryNumber&gt;=cint(Config(&quot;MaxRetryNumber&quot;))]" DisplayName="If nax retries reached" sap:VirtualizedContainerService.HintSize="798,652.666666666667" sap2010:WorkflowViewState.IdRef="If_32">
+                          <If Condition="[RetryNumber&gt;=cint(Config(&quot;MaxRetryNumber&quot;))]" DisplayName="If nax retries reached" sap:VirtualizedContainerService.HintSize="798,654.666666666667" sap2010:WorkflowViewState.IdRef="If_32">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,488.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,490.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_80">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -977,7 +1006,7 @@
                                     <InArgument x:TypeArguments="x:Int32">[TransactionNumber+1]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_103">
+                                <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_103">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Int32">[RetryNumber]</OutArgument>
                                   </Assign.To>
@@ -1322,40 +1351,20 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MoveSharepointFiles.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="MoveSharepointFiles.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointBaseUrl">
-                    <Literal x:TypeArguments="x:String">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</Literal>
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;SharePointcreds&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">
-                    <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Passwords(&quot;SharePointcreds&quot;)" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointSourceItemURL">
-                    <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue</Literal>
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointDestinationItemURL">
-                    <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Bot Processed Files</Literal>
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointBaseUrl">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">[Config("SharePointcreds").ToString]</InArgument>
+                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">[Passwords("SharePointcreds")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointSourceItemURL">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Input Queue</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointDestinationItemURL">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Bot Processed Files</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UploadFilestoSharepoint.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="UploadFilestoSharepoint.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointLink">
-                    <Literal x:TypeArguments="x:String">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</Literal>
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;SharePointcreds&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">
-                    <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Passwords(&quot;SharePointcreds&quot;)" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointItemUrl">
-                    <Literal x:TypeArguments="x:String">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Updated Xlsx File By Bot</Literal>
-                  </InArgument>
-                  <InArgument x:TypeArguments="s:String[]" x:Key="in_UploadFileList">
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Directory.GetFiles(environment.CurrentDirectory+&quot;\Data\Input&quot;)" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointLink">https://bakerhughes.sharepoint.com/sites/TPSSourcingDigital</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointUsername">[Config("SharePointcreds").ToString]</InArgument>
+                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SharePointPassword">[Passwords("SharePointcreds")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SharePointItemUrl">Shared Documents/_AUTOMATIONS/Country Of Origin/COO Uploader in iSP/_BOT_FILES_DONOTMOVE/DEV/Updated Xlsx File By Bot</InArgument>
+                  <InArgument x:TypeArguments="s:String[]" x:Key="in_UploadFileList">[Directory.GetFiles(environment.CurrentDirectory+"\Data\Input")]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Info" Message="[&quot;Process finished due to no more transaction data&quot;]" />
